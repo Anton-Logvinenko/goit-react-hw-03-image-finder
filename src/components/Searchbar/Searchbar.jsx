@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+
 import { toast } from 'react-hot-toast';
 import css from './Searchbar.module.css';
 import { VscSearch } from 'react-icons/vsc';
