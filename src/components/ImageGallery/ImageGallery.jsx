@@ -30,13 +30,6 @@ class ImageGallery extends Component {
     ) {
       this.setState({ loading: true });
       getImgApi(this.props.imgSearch, this.state.per_page)
-        .then(response => {
-         
-          if (!response.ok) {
-            return Promise.reject(new Error());
-          }
-          return response.json();
-        })
         .then(data => {
           if (data.totalHits > 0) {
             return this.setState({
@@ -88,7 +81,7 @@ class ImageGallery extends Component {
     return (
       <div>
         {!data && <h1>Внесите название изображения </h1>}
-        {error && <p> Возникла ошибка {error.message}</p>}
+        {error && <h2> Возникла ошибка {error.message}</h2>}
         {loading && <Loader />}
 
         <ul className={css.ImageGallery}>
